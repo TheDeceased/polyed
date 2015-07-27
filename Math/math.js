@@ -19,7 +19,7 @@ function getDistanceToLine(A, B, M) {
 
 function getDistaceToSector(A, B, M) {
 	if (new Vector(A, M).dotProduct(new Vector(A, B)) < 0) {
-	  return new Vector(M, A).length();
+		return new Vector(M, A).length();
 	}
 
 	if (new Vector(B, M).dotProduct(new Vector(B, A)) < 0) {
