@@ -18,18 +18,13 @@ function getDistanceToLine(A, B, M) {
 }
 
 function getDistaceToSector(A, B, M) {
-	if (
-		new Vector(A, M).dotProduct(new Vector(A, B)) < 0 &&
-		new Vector(B, M).dotProduct(new Vector(B, A)) < 0
-	) {
-		return Math.min(new Vector(M, A).length(), new Vector(M, B).length());
+	if (new Vector(A, M).dotProduct(new Vector(A, B)) < 0) {
+	  return new Vector(M, A).length();
 	}
 
-	if (new Vector(A, M).dotProduct(new Vector(A, B)) < 0) {
-		return new Vector(M, A).length();
-	}
 	if (new Vector(B, M).dotProduct(new Vector(B, A)) < 0) {
 		return new Vector(M, B).length();
 	}
+
 	return getDistanceToLine(A, B, M);
 }
